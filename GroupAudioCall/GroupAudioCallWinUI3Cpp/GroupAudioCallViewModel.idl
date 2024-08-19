@@ -1,0 +1,21 @@
+namespace GroupAudioCallWinUI3Cpp
+{
+    [default_interface]
+    runtimeclass GroupAudioCallViewModel : Microsoft.UI.Xaml.Data.INotifyPropertyChanged {
+        GroupAudioCallViewModel();
+
+        String ConnectedState;
+        Int32 Participants;
+        String UserID{ get; };
+        String RoomID;
+
+        Microsoft.UI.Xaml.Controls.InfoBar LogMessageInfoBar;
+        String LogTitle;
+        String LogMessage;
+
+        void OpenLogMessage(String strTitle, String strMessage);
+
+        void OnClickJoin(Object sender, Microsoft.UI.Xaml.RoutedEventArgs args);
+        void OnClickLeave(Object sender, Microsoft.UI.Xaml.RoutedEventArgs args);
+    }
+}

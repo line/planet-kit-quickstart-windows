@@ -1,0 +1,3 @@
+[submodule "GroupAudioCall/PlanetKitSDK"]
+	path = GroupAudioCall/PlanetKitSDK
+	url = https://github.com/line/planet-kit-windows
