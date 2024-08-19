@@ -93,11 +93,10 @@
       <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">PlanetKit64.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-      </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">copy /Y "..\PlanetKitSDK\bin\planetkit64.dll" "$(TargetDir)"</Command>
     </PreBuildEvent>
     <PreBuildEvent>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy "..\PlanetKitSDK\bin\auth\*" "$(TargetDir)auth\*" /Y &amp;&amp; copy /Y "..\PlanetKitSDK\bin\planetkit.dll" "$(TargetDir)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copy /Y "..\PlanetKitSDK\bin\planetkit.dll" "$(TargetDir)"</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
@@ -115,11 +114,10 @@
       <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">PlanetKit.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-      </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">copy /Y "..\PlanetKitSDK\bin\planetkit64.dll" "$(TargetDir)"</Command>
     </PreBuildEvent>
     <PreBuildEvent>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy "..\PlanetKitSDK\bin\auth\*" "$(TargetDir)auth\*" /Y &amp;&amp; copy /Y "..\PlanetKitSDK\bin\planetkit.dll" "$(TargetDir)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copy /Y "..\PlanetKitSDK\bin\planetkit.dll" "$(TargetDir)"</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup Condition="'$(WindowsPackageType)'!='None' and Exists('Package.appxmanifest')">
