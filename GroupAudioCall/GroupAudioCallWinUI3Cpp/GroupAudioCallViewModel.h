@@ -19,7 +19,7 @@
 #include "GroupAudioCallViewModel.g.h"
 
 #include "EventListener.h"
-#include "../src/GroupAudioCallController.h"
+#include "../PlanetKit/src/GroupAudioCallController.h"
 
 namespace winrt::GroupAudioCallWinUI3Cpp::implementation {
     struct GroupAudioCallViewModel : GroupAudioCallViewModelT<GroupAudioCallViewModel> {

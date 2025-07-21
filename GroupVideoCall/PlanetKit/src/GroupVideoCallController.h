@@ -1,4 +1,4 @@
-// Copyright 2024 LINE Plus Corporation
+// Copyright 2025 LINE Plus Corporation
 // 
 // LINE Plus Corporation licenses this file to you under the Apache License,
 // version 2.0 (the "License"); you may not use this file except in compliance
@@ -19,27 +19,41 @@
 
 #include "PlanetKit.h"
 #include "PlanetKitConference.h"
-#include "GroupAudioCallEventListener.h"
-#include "ConferenceEventListener.h"
+#include "GroupVideoCallEventListener.h"
+#include "GroupVideoCallPeerList.h"
 
-namespace GroupAudioCall {
-    class GroupAudioCallController {
+namespace GroupVideoCall {
+    class ConferenceEventListener;
+
+    class GroupVideoCallController {
     public :
-        GroupAudioCallController(std::shared_ptr<GroupAudioCallEventListener> pEventListener);
+        static std::shared_ptr<GroupVideoCallController> GetInstance();
+        void SetEventListener(std::shared_ptr<GroupVideoCallEventListener> pEventListener);
         void InitializePlanetKit();
 
         void JoinConference(std::wstring strRoomId);
         void LeaveConference();
 
+        bool AddMyVideoReceiver(PlanetKit::IVideoReceiverPtr pReceiver);
+        bool RemoveMyVideoReceiver(PlanetKit::IVideoReceiverPtr pReceiver);
+        bool AddMyVideoView(HWND hWnd);
+        void RemoveMyView(HWND hWnd);
 
         // Events from PlanetKit
         void OnConnected();
         void OnDisconnected(std::wstring strDisconnectReason);
-        void OnPeerListUpdate(size_t nParticipantCount);
+        void OnPeerListUpdate(PlanetKit::ConferencePeerUpdateParamPtr pParam);
 
     private :
+        GroupVideoCallController();
+        void InitializeAudio();
+        void InitializeCamera();
+        
+        static std::shared_ptr<GroupVideoCallController> m_pInstance;
+
         PlanetKit::PlanetKitConferencePtr m_pConference;
-        std::shared_ptr<GroupAudioCallEventListener> m_pEventListener{ nullptr };
-        ConferenceEventListener m_cEventListener{ this };
+
+        std::shared_ptr<GroupVideoCallEventListener> m_pEventListener;
+        PlanetKit::SharedPtr<ConferenceEventListener> m_pConferenceEventListener;
     };
 };

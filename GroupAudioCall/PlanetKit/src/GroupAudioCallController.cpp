@@ -30,6 +30,9 @@ namespace GroupAudioCall {
         auto pManager = PlanetKit::PlanetKitManager::GetInstance();
         // Updates PlanetKit cloud server URL.
         pManager->UpdateServerUrl(PLANET_CLOUD_URL);
+
+        // Initializes audio settings.
+        InitializeAudio();
     }
 
     void GroupAudioCallController::JoinConference(std::wstring strRoomId) {
@@ -54,10 +57,13 @@ namespace GroupAudioCall {
         );
 
         // Attaches a PlanetKit conference event listener.
-        pConferenceParam->SetConferenceEvent(&m_cEventListener);
+        pConferenceParam->SetConferenceEvent(m_pConferenceEventListener);
 
         auto pPlanetKitManager = PlanetKit::PlanetKitManager::GetInstance();
-        auto sStartResult = pPlanetKitManager->JoinConference(pConferenceParam, m_pConference);
+
+        auto pCurMic = pPlanetKitManager->GetAudioManager()->GetCurrentMic();
+
+        auto sStartResult = pPlanetKitManager->JoinConference(pConferenceParam, pCurMic, m_pConference);
 
         if (sStartResult.bSuccess == false) {
             m_pEventListener->FailedToJoin((int)sStartResult.reason);
@@ -84,5 +90,16 @@ namespace GroupAudioCall {
 
     void GroupAudioCallController::OnPeerListUpdate(size_t nParticipantCount) {
         m_pEventListener->OnPeerListUpdate(nParticipantCount);
+    }
+
+    void GroupAudioCallController::InitializeAudio() {
+        auto pPlanetKitManager = PlanetKit::PlanetKitManager::GetInstance();
+        auto pAudioManager = pPlanetKitManager->GetAudioManager();
+
+        auto pDefaultMicInfo = pAudioManager->GetDefaultMicInfo();
+        auto pDefaultSpkInfo = pAudioManager->GetDefaultSpeakerInfo();
+
+        pAudioManager->ChangeMic(pDefaultMicInfo.Value());
+        pAudioManager->ChangeSpeaker(pDefaultSpkInfo.Value());
     }
 };

@@ -1,4 +1,4 @@
-// Copyright 2024 LINE Plus Corporation
+// Copyright 2025 LINE Plus Corporation
 // 
 // LINE Plus Corporation licenses this file to you under the Apache License,
 // version 2.0 (the "License"); you may not use this file except in compliance
@@ -17,13 +17,13 @@
 #include <memory>
 #include "PlanetKitManager.h"
 #include "IPlanetKitConferenceEvent.h"
+#include "GroupVideoCallController.h"
 
-namespace GroupAudioCall {
-    class GroupAudioCallController;
+namespace GroupVideoCall {
 
     class ConferenceEventListener : public PlanetKit::IConferenceEvent {
     public :
-        ConferenceEventListener(GroupAudioCallController* pAudioCallController);
+        ConferenceEventListener(std::shared_ptr<GroupVideoCallController> pGroupVideoCallController);
 
         void OnConnected(PlanetKit::PlanetKitConferencePtr pPlanetKitConference, PlanetKit::ConferenceConnectedParamPtr pParam) final;
 
@@ -31,7 +31,7 @@ namespace GroupAudioCall {
 
         void OnPeerListUpdate(PlanetKit::PlanetKitConferencePtr pPlanetKitConference, PlanetKit::ConferencePeerUpdateParamPtr pParam) final;
 
-        void OnPeersVideoUpdated(PlanetKit::PlanetKitConferencePtr pPlanetKitConference, PlanetKit::ConferenceVideoUpdatedParam* pParam) final;
+        void OnPeersVideoUpdated(PlanetKit::PlanetKitConferencePtr pPlanetKitConference, PlanetKit::ConferenceVideoUpdatedParamPtr pParam) final;
 
         void OnPublicSubgroupUpdated(PlanetKit::PlanetKitConferencePtr pPlanetKitConference, const PlanetKit::ConferenceSubgroupUpdatePeerArray& arrSubgroupUpdatePeer) final;
 
@@ -55,7 +55,7 @@ namespace GroupAudioCall {
 
         void OnDataSessionIncoming(const PlanetKit::WStringOptional& strSubgroupName, PlanetKit::DataSessionStreamIdT nStreamId, PlanetKit::EDataSessionType eType) final;
 
-        void OnPeerScreenShareUpdated(PlanetKit::ConferencePeerScreenShareUpdatedParam* pPeerScreenShareUpdateInfo) final;
+        void OnPeerScreenShareUpdated(PlanetKit::ConferencePeerScreenShareUpdatedParamPtr pPeerScreenShareUpdateInfo) final;
 
         void OnException(PlanetKit::PlanetKitConferencePtr pPlanetKitConference, const PlanetKit::ConferenceExceptionArray& arrExceptionMessage) final;
 
@@ -67,7 +67,7 @@ namespace GroupAudioCall {
 
         void OnMyScreenShareStoppedByHold(PlanetKit::PlanetKitConferencePtr pPlanetKitConference) final;
 
-    private :
-        GroupAudioCallController* m_pAudioCallController{ nullptr };
+    private:
+        std::shared_ptr<GroupVideoCallController> m_pGroupVideoCallController;
     };
 };
