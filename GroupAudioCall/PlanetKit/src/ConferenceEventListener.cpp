@@ -159,7 +159,7 @@ namespace GroupAudioCall {
         m_pAudioCallController->OnPeerListUpdate(pParam->TotalCount());
     }
 
-    void ConferenceEventListener::OnPeersVideoUpdated(PlanetKit::PlanetKitConferencePtr pPlanetKitConference, PlanetKit::ConferenceVideoUpdatedParam* pParam) {
+    void ConferenceEventListener::OnPeersVideoUpdated(PlanetKit::PlanetKitConferencePtr pPlanetKitConference, PlanetKit::ConferenceVideoUpdatedParamPtr pParam) {
         std::ignore = pPlanetKitConference;
         std::ignore = pParam;
     }
@@ -221,7 +221,7 @@ namespace GroupAudioCall {
         std::ignore = eType;
     }
 
-    void ConferenceEventListener::OnPeerScreenShareUpdated(PlanetKit::ConferencePeerScreenShareUpdatedParam* pPeerScreenShareUpdateInfo) {
+    void ConferenceEventListener::OnPeerScreenShareUpdated(PlanetKit::ConferencePeerScreenShareUpdatedParamPtr pPeerScreenShareUpdateInfo) {
         std::ignore = pPeerScreenShareUpdateInfo;
     }
 

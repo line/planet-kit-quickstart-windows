@@ -20,7 +20,7 @@
 #include "GroupAudioCallViewModel.g.cpp"
 #endif
 
-#include "../src/Constants.h"
+#include "../PlanetKit/src/Constants.h"
 
 namespace winrt::GroupAudioCallWinUI3Cpp::implementation {
     GroupAudioCallViewModel::GroupAudioCallViewModel() {

@@ -25,7 +25,7 @@
 #define new DEBUG_NEW
 #endif
 
-#include "../src/Constants.h"
+#include "../PlanetKit/src/Constants.h"
 
 // CAboutDlg dialog used for App About
 

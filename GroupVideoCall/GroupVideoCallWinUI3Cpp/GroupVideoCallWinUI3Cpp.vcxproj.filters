@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Midl Include="MainWindow.idl" />
+    <Midl Include="MainWindowViewModel.idl">
+      <Filter>App\Model</Filter>
+    </Midl>
+    <Midl Include="ViewModels\GroupVideoCallJoinViewModel.idl">
+      <Filter>App\ViewModel</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(GeneratedFilesDir)module.g.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PlanetKit\src\ConferenceEventListener.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PlanetKit\src\GroupVideoCallController.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PlanetKit\src\GroupVideoCallPeerCotroller.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PlanetKit\src\GroupVideoCallPeerList.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PlanetKit\src\PeerControlEventListener.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="EventListener.cpp">
+      <Filter>App\src</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoReceiver.cpp">
+      <Filter>App\src</Filter>
+    </ClCompile>
+    <ClCompile Include="PeerListUpdateEventListener.cpp">
+      <Filter>App\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PlanetKit\src\ConferenceEventListener.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PlanetKit\src\Constants.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PlanetKit\src\GroupVideoCallController.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PlanetKit\src\GroupVideoCallEventListener.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PlanetKit\src\GroupVideoCallPeerCotroller.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PlanetKit\src\GroupVideoCallPeerList.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PlanetKit\src\IPeerListUpdateEventListener.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PlanetKit\src\PeerControlEventListener.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="EventListener.h">
+      <Filter>App\src</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoReceiver.h">
+      <Filter>App\src</Filter>
+    </ClInclude>
+    <ClInclude Include="PeerListUpdateEventListener.h">
+      <Filter>App\src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Wide310x150Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\StoreLogo.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square150x150Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\LockScreenLogo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{51ca5d6c-acf2-48c6-ba5d-a277ba4d1c86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{47efeb7a-1ff6-46f1-beb4-970931d69ab7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App">
+      <UniqueIdentifier>{6c9a04f7-2d4b-42b7-ab34-4fe31aabb605}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Window">
+      <UniqueIdentifier>{4ddbf801-fa33-48d6-91f4-e3ad98e1b29a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Model">
+      <UniqueIdentifier>{026fab20-4261-4a10-ae45-85caaddcfe1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\src">
+      <UniqueIdentifier>{862310c7-7e3e-40f9-96e0-11563f75a5ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Pages">
+      <UniqueIdentifier>{f57284ce-61d6-4e7a-9df5-4918554a8eb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\ViewModel">
+      <UniqueIdentifier>{3d9755b2-efa4-4dcb-938f-c84cd9d0200f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="$(MSBuildThisFileDirectory)..\..\natvis\wil.natvis" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <Filter>App</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Filter>App\Window</Filter>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainWindow.xaml">
+      <Filter>App\Window</Filter>
+    </Page>
+    <Page Include="Pages\GroupVideoCallJoinPage.xaml">
+      <Filter>App\Pages</Filter>
+    </Page>
+    <Page Include="Pages\ParticipantPage.xaml">
+      <Filter>App\Pages</Filter>
+    </Page>
+  </ItemGroup>
+</Project>

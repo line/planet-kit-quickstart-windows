@@ -7,12 +7,6 @@
     </Midl>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\ConferenceEventListener.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\GroupAudioCallController.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp">
       <Filter>App</Filter>
     </ClCompile>
@@ -25,20 +19,14 @@
     <ClCompile Include="EventListener.cpp">
       <Filter>App</Filter>
     </ClCompile>
+    <ClCompile Include="..\PlanetKit\src\ConferenceEventListener.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PlanetKit\src\GroupAudioCallController.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\ConferenceEventListener.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Constants.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\GroupAudioCallController.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\GroupAudioCallEventListener.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>App</Filter>
     </ClInclude>
@@ -47,6 +35,18 @@
     </ClInclude>
     <ClInclude Include="EventListener.h">
       <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PlanetKit\src\ConferenceEventListener.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PlanetKit\src\Constants.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PlanetKit\src\GroupAudioCallController.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PlanetKit\src\GroupAudioCallEventListener.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

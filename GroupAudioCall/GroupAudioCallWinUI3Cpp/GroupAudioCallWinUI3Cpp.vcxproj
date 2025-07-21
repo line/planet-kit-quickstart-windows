@@ -71,7 +71,7 @@
   <PropertyGroup Label="UserMacros" />
   <ItemDefinitionGroup>
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)pch.pch</PrecompiledHeaderOutputFile>
       <WarningLevel>Level4</WarningLevel>
@@ -81,43 +81,43 @@
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
     <ClCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\PlanetKitSDK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\PlanetKitSDK\include;$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\PlanetKitSDK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\PlanetKitSDK\include;$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\PlanetKitSDK\bin;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\PlanetKitSDK\bin;</AdditionalLibraryDirectories>
       <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">PlanetKit.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Link>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\PlanetKitSDK\bin;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\PlanetKitSDK\bin;</AdditionalLibraryDirectories>
       <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">PlanetKit64.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">copy /Y "..\PlanetKitSDK\bin\planetkit64.dll" "$(TargetDir)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">copy /Y "..\..\PlanetKitSDK\bin\planetkit64.dll" "$(TargetDir)"</Command>
     </PreBuildEvent>
     <PreBuildEvent>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copy /Y "..\PlanetKitSDK\bin\planetkit.dll" "$(TargetDir)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copy /Y "..\..\PlanetKitSDK\bin\planetkit.dll" "$(TargetDir)"</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
     <ClCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\PlanetKitSDK\include;$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\PlanetKitSDK\include;$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\PlanetKitSDK\include;$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\PlanetKitSDK\include;$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\PlanetKitSDK\bin;</AdditionalLibraryDirectories>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\PlanetKitSDK\bin;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\PlanetKitSDK\bin;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\PlanetKitSDK\bin;</AdditionalLibraryDirectories>
       <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">PlanetKit64.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">PlanetKit.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">copy /Y "..\PlanetKitSDK\bin\planetkit64.dll" "$(TargetDir)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">copy /Y "..\..\PlanetKitSDK\bin\planetkit64.dll" "$(TargetDir)"</Command>
     </PreBuildEvent>
     <PreBuildEvent>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copy /Y "..\PlanetKitSDK\bin\planetkit.dll" "$(TargetDir)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copy /Y "..\..\PlanetKitSDK\bin\planetkit.dll" "$(TargetDir)"</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup Condition="'$(WindowsPackageType)'!='None' and Exists('Package.appxmanifest')">
@@ -129,10 +129,10 @@
     <Manifest Include="app.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\ConferenceEventListener.h" />
-    <ClInclude Include="..\src\Constants.h" />
-    <ClInclude Include="..\src\GroupAudioCallController.h" />
-    <ClInclude Include="..\src\GroupAudioCallEventListener.h" />
+    <ClInclude Include="..\PlanetKit\src\ConferenceEventListener.h" />
+    <ClInclude Include="..\PlanetKit\src\Constants.h" />
+    <ClInclude Include="..\PlanetKit\src\GroupAudioCallController.h" />
+    <ClInclude Include="..\PlanetKit\src\GroupAudioCallEventListener.h" />
     <ClInclude Include="EventListener.h" />
     <ClInclude Include="GroupAudioCallViewModel.h" />
     <ClInclude Include="pch.h" />
@@ -148,18 +148,8 @@
     <Page Include="MainWindow.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\ConferenceEventListener.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="..\src\GroupAudioCallController.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
-    </ClCompile>
+    <ClCompile Include="..\PlanetKit\src\ConferenceEventListener.cpp" />
+    <ClCompile Include="..\PlanetKit\src\GroupAudioCallController.cpp" />
     <ClCompile Include="EventListener.cpp" />
     <ClCompile Include="GroupAudioCallViewModel.cpp" />
     <ClCompile Include="pch.cpp">
